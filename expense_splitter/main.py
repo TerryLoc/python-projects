@@ -13,8 +13,20 @@ def calculate_split_amount() -> None:
     """
     This function calculates the amount each person has to pay based on the total amount and their respective percentages.
     """
+    print("---------------------------------")
+    print("Welcome to the Expense Splitter!")
+    print("")
     total_amount: float = get_valid_input("Enter the total amount: ")
     num_people: int = int(get_valid_input("Enter the number of people: "))
+    tip_percentage: float = get_valid_input("Enter your tip %: ")
+    print("---------------------------------")
+    print("")
+
+    # Calculate the tip amount based on the total amount
+    tip: float = total_amount * (tip_percentage / 100)
+
+    # Add the calculated tip to the total amount
+    total_amount += tip
 
     percentages = []
     for i in range(num_people - 1):
@@ -45,7 +57,7 @@ def calculate_split_amount() -> None:
         )
     print("")
     print("---------------------------------")
-    print("The total amount of the bill is: €", total_amount)
+    print("The total amount of the bill including tip: €", total_amount)
     print("---------------------------------")
 
 
