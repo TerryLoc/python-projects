@@ -28,7 +28,7 @@ def calculate_split_amount() -> None:
     # Add the calculated tip to the total amount
     total_amount += tip
 
-    percentages = []
+    percentages: list[float] = []
     for i in range(num_people - 1):
         while True:
             percentage = get_valid_input(f"Enter the percentage for person {i + 1}: ")
